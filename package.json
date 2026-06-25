@@ -1,0 +1,12 @@
+{
+  "name": "cloze-learning-app",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "devDependencies": {
+    "typescript": "~6.0.2"
+  }
+}
