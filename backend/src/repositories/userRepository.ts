@@ -12,6 +12,15 @@ export class UserRepository {
         return (rows[0] as User) || null;
     }
 
+    async getUserByUsername(username: string): Promise<User | null> {
+        const [rows] = await pool.query<RowDataPacket[]>(
+            'SELECT * FROM users WHERE username = ?',
+            [username]
+        );
+
+        return (rows[0] as User) || null;
+    }
+
     async createUser(userData: Omit<User, 'user_id' | 'total_xp'>): Promise<number> {
         const [result] = await pool.query<ResultSetHeader>(
             'INSERT INTO users (username, display_name, password_hash) VALUES (?, ?, ?)',
@@ -36,3 +45,4 @@ export class UserRepository {
     }
 }
 
+export const userRepository = new UserRepository();

@@ -39,3 +39,5 @@ export class TestAttemptRepository {
         return result.insertId;
     }
 }
+
+export const testAttemptRepository = new TestAttemptRepository();
