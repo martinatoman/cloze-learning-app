@@ -6,7 +6,12 @@
     "backend",
     "shared"
   ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
   "devDependencies": {
-    "typescript": "~6.0.2"
+    "concurrently": "^9.0.0"
   }
 }
