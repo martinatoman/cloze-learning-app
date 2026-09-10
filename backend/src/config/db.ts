@@ -13,3 +13,4 @@ export const pool = mysql.createPool({
     queueLimit: 0
 })
 
+export type QueryExecutor = mysql.Pool | mysql.PoolConnection;
